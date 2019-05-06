@@ -51,7 +51,7 @@ def kara(a,b):
     k_ad = kara(a[0:i], b[j:len(b)])
     k_bc = kara(a[i:len(a)], b[0:j])
     
-    #res = k_ac*10**(i+j) + k_ad_bc*10**(max(i,j)) + k_bd
+    #res = k_ac*10**(l*2) + k_ad_bc*10**(l) + k_bd
     res = k_ac*10**(i+j) + k_ad*10**(i) + k_bc*10**(j) + k_bd
     return res
 
