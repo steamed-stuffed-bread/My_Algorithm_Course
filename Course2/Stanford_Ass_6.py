@@ -1,4 +1,4 @@
-print "Hello World!"
+print "dijkstra"
 
 def read(filename):
     f = open(filename)
