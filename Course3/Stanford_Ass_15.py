@@ -21,17 +21,19 @@ def reconstruct(A,path):
     while i > 1:
         if A[i-1] > A[i-2] + path[i-1]:
             i = i-1
+            print "i-1 %s" % S
         else:
             S.append(i)
             i = i-2
+            print "i-2 %s" % S
     if i == 1:
         S.append(1)
     ans = ''.join([str(int(bit in S)) for bit in target])
     return ans
 
 if __name__ == "__main__":
-    #filename = "mwis_test.txt" # 10010000
-    filename = "mwis.txt"
+    filename = "mwis_test.txt" # 10010000
+    #filename = "mwis.txt"
     freq = readfile(filename)
     ans = mwis(freq)
     print ans
