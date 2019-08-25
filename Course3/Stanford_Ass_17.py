@@ -19,7 +19,7 @@ def Floyed_Warshall(G, nv):
         for j in range(bound):
             if i == j:
                 last_A[i][j] = 0
-            elif (i,j) in G.keys():
+            elif (i,j) in G:
                 last_A[i][j] = G[(i,j)]
     for k in range(1,bound):
         for i in range(1,bound):
@@ -28,12 +28,19 @@ def Floyed_Warshall(G, nv):
                 if i == j:
                     if A[i][j] < 0:
                         return "Graph has a nagetive cycle!"
+        if k % 100 == 0:
+            print "dealt with %s data" % k
     return min(min(A, key=lambda x:min(x)))
 
 #def Bellman_Ford(G, nv):
 
 if __name__ == '__main__':
-    filename = 'g_test.txt' # -41
-    G, nv = readfile(filename)
-    res = Floyed_Warshall(G, nv)
-    print res
+    filenames = ['g_test.txt'] # -41
+    filenames = ['g1.txt','g2.txt','g3.txt']
+    results = []
+    for f in filenames:
+        G, nv = readfile(f)
+        print "read file %s" % f
+        res = Floyed_Warshall(G, nv)
+        results.append(res)
+    print results
