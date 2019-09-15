@@ -4,6 +4,8 @@ import gc
 import sys
 import threading
 from StringIO import StringIO
+#https://www.geeksforgeeks.org/2-satisfiability-2-sat-problem/
+#https://github.com/quietcoolwu/Algorithms-design-and-analysis-1
 
 def make_sat_graph(clauses):
     n = len(clauses)
